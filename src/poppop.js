@@ -6,7 +6,12 @@ export default class PopPop extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      display: this.props.display
+    }
+
     this.handleOverlayClick = this.handleOverlayClick.bind(this);
+    this.hide = this.hide.bind(this);
   }
 
   handleOverlayClick() {
@@ -20,11 +25,11 @@ export default class PopPop extends Component {
   }
 
   show() {
-    ReactDOM.findDOMNode(this.refs.popup).style.display = 'block';
+    this.setState({display: 'show'});
   }
 
   hide() {
-    ReactDOM.findDOMNode(this.refs.popup).style.display = 'none';
+    this.setState({display: 'hide'});
   }
 
   render() {
@@ -32,9 +37,10 @@ export default class PopPop extends Component {
         displayStyle = {};
     const {
       overlay,
-      position,
-      display
+      position
     } = this.props;
+    const display = this.state.display;
+
     if (display === 'hide') {
       displayStyle.display = 'none';
     } else if (display === 'show') {
@@ -52,9 +58,11 @@ export default class PopPop extends Component {
     }
 
     return (
-      <div style={wrapperStyle} ref="popup"> 
+      <div style={wrapperStyle}> 
         {overlayTmpl}
         <div style={contentStyle}>
+          <button style={STYLE.closeBtn}
+                  onClick={this.hide}>x</button>
           {this.props.children}
         </div>
       </div>

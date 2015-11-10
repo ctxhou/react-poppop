@@ -21,7 +21,8 @@ module.exports = {
     backgroundColor: 'white',
     borderRadius: '3px',
     zIndex: 100,
-    padding: '20px'
+    padding: '20px',
+    position: 'relative'
   },
 
   center: {
@@ -47,5 +48,11 @@ module.exports = {
     height: '100%',
     zIndex: 99,
     backgroundColor: 'rgba(0,0,0,0.3)'
+  },
+
+  closeBtn: {
+    position: 'absolute',
+    right: '9px',
+    top: '9px'
   }
 }

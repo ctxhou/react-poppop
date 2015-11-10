@@ -7,6 +7,11 @@ render(
           position="center"
           display='show'
           overlayClick={true}>
-    <div>sjidfdsf</div>
+    <div>
+      <h1>sjidfdsfsjdifjsdoifjoisjdfoi</h1>
+      <h1>sjidfdsfsjdifjsdoifjoisjdfoi</h1>
+      <h1>sjidfdsfsjdifjsdoifjoisjdfoi</h1>
+      <h1>sjidfdsfsjdifjsdoifjoisjdfoi</h1>
+    </div>
   </PopPop>, 
   document.getElementById('root'));
