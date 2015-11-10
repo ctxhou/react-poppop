@@ -1,0 +1,5 @@
+# react-poppop
+
+## License
+
+MIT
