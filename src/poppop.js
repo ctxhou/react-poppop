@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import STYLE from './style';
 
 export default class PopPop extends Component {

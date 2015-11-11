@@ -1,8 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom';
 import PopPop from "../index";
 
-render(
+React.render(
   <PopPop overlay={true}
           position="center"
           display='show'
