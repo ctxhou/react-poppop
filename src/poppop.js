@@ -36,10 +36,12 @@ export default class PopPop extends Component {
   render() {
     let overlayTmpl,
         displayStyle = {},
-        wrapperStyle;
+        wrapperStyle,
+        closeBtnTmpl;
     const {
       overlay,
-      position
+      position,
+      closeBtn
     } = this.props;
     const display = this.state.display;
 
@@ -59,13 +61,16 @@ export default class PopPop extends Component {
       overlayTmpl = <div style={overlayStyle} 
                           onClick={this.handleOverlayClick}></div>;
     }
+    if (closeBtn) {
+      closeBtnTmpl = <button style={STYLE.closeBtn}
+                              onClick={this.hide}>x</button>
+    }
 
     return (
       <div style={wrapperStyle}> 
         {overlayTmpl}
         <div style={contentStyle}>
-          <button style={STYLE.closeBtn}
-                  onClick={this.hide}>x</button>
+          {closeBtnTmpl}
           {this.props.children}
         </div>
       </div>

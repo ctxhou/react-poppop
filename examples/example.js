@@ -5,6 +5,7 @@ React.render(
   <PopPop overlay={true}
           position="center"
           display='show'
+          closeBtn={false}
           onClose={onClose}
           overlayClick={true}>
     <div>
