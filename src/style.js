@@ -11,7 +11,6 @@ module.exports = {
     height: '100%',
     top: '0px',
     left: '0px',
-    textAlign: 'center',
     display: 'flex',
     alignItems: 'center'
   },

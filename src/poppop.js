@@ -29,11 +29,14 @@ export default class PopPop extends Component {
 
   hide() {
     this.setState({display: 'hide'});
+    if (this.props.onClose)
+      this.props.onClose();
   }
 
   render() {
     let overlayTmpl,
-        displayStyle = {};
+        displayStyle = {},
+        wrapperStyle;
     const {
       overlay,
       position
@@ -42,17 +45,18 @@ export default class PopPop extends Component {
 
     if (display === 'hide') {
       displayStyle.display = 'none';
+      wrapperStyle = Object.assign(STYLE.wrapper, STYLE[position], {display: 'none'});
     } else if (display === 'show') {
       displayStyle.display = 'block';
+      wrapperStyle = Object.assign(STYLE.wrapper, STYLE[position], {display: 'flex'});
     }
 
     // merge the content style and position style
-    const wrapperStyle = Object.assign(STYLE.wrapper, STYLE[position]);
     const contentStyle = Object.assign(STYLE.content, displayStyle);
     const overlayStyle = Object.assign(STYLE.overlay, displayStyle);
 
     if (overlay) {
-      overlayTmpl = <div style={STYLE.overlay} 
+      overlayTmpl = <div style={overlayStyle} 
                           onClick={this.handleOverlayClick}></div>;
     }
 
