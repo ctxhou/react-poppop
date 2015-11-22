@@ -20,7 +20,6 @@ module.exports = {
     backgroundColor: 'white',
     borderRadius: '3px',
     zIndex: 100,
-    padding: '20px',
     position: 'relative'
   },
 

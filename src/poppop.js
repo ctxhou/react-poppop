@@ -5,11 +5,11 @@ export default class PopPop extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      display: this.props.display
-    }
+
+    this.state = this._display(this.props.display);
 
     this.handleOverlayClick = this.handleOverlayClick.bind(this);
+    this._display = this._display.bind(this);
     this.hide = this.hide.bind(this);
   }
 
@@ -24,13 +24,22 @@ export default class PopPop extends Component {
   }
 
   show() {
-    this.setState({display: 'show'});
+    this.setState(this._display('show'));
   }
 
   hide() {
-    this.setState({display: 'hide'});
+    this.setState(this._display('hide'));
     if (this.props.onClose)
       this.props.onClose();
+  }
+
+  // return the proper display state
+  _display(display) {
+    if (display === 'show') {
+      return {flexDisplay: 'flex', blockDisplay: 'block'};
+    } else if (display === 'hide') {
+      return {flexDisplay: 'none', blockDisplay: 'none'};
+    }
   }
 
   render() {
@@ -43,19 +52,25 @@ export default class PopPop extends Component {
       position,
       closeBtn
     } = this.props;
-    const display = this.state.display;
 
-    if (display === 'hide') {
-      displayStyle.display = 'none';
-      wrapperStyle = Object.assign(STYLE.wrapper, STYLE[position], {display: 'none'});
-    } else if (display === 'show') {
-      displayStyle.display = 'block';
-      wrapperStyle = Object.assign(STYLE.wrapper, STYLE[position], {display: 'flex'});
-    }
+    const {
+      flexDisplay,
+      blockDisplay
+    } = this.state;
+
+    if (position !== 'full')
+      wrapperStyle = Object.assign(STYLE.wrapper, STYLE[position], {display: flexDisplay});
+    else
+      wrapperStyle = Object.assign(STYLE.wrapper, {display: flexDisplay});
 
     // merge the content style and position style
-    const contentStyle = Object.assign(STYLE.content, displayStyle);
-    const overlayStyle = Object.assign(STYLE.overlay, displayStyle);
+    let contentStyle;
+    if (position === 'full')
+      contentStyle = Object.assign(STYLE.content, STYLE.full, {display: blockDisplay});
+    else
+      contentStyle = Object.assign(STYLE.content, {display: blockDisplay});
+
+    const overlayStyle = Object.assign(STYLE.overlay, {display: blockDisplay});
 
     if (overlay) {
       overlayTmpl = <div style={overlayStyle} 
