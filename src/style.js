@@ -39,6 +39,11 @@ module.exports = {
     justifyContent: 'flex-end'
   },
 
+  full: {
+    width: '100%',
+    height: '100%'
+  },
+
   overlay : {
     position: 'fixed',
     top: 0,
@@ -52,6 +57,7 @@ module.exports = {
   closeBtn: {
     position: 'absolute',
     right: '9px',
-    top: '9px'
+    top: '9px',
+    backgroundColor: 'transparent'
   }
 }

@@ -3,10 +3,11 @@ import PopPop from "../index";
 
 React.render(
   <PopPop overlay={true}
-          position="center"
+          position="full"
           display='show'
           closeBtn={false}
           onClose={onClose}
+          overlay={false}
           overlayClick={true}>
     <div>
       <h1>sjidfdsfsjdjdfoi</h1>
