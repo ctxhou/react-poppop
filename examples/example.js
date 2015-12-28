@@ -1,7 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PopPop from "../index";
 
-React.render(
+ReactDOM.render(
   <PopPop overlay={true}
           position="full"
           display='show'
