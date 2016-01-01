@@ -1,3 +1,3 @@
-import PopPop from "./src/poppop";
+import PopPop from "./lib/poppop";
 
 export default PopPop;
