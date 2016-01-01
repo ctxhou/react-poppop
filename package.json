@@ -1,8 +1,8 @@
 {
   "name": "react-poppop",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "react poppop is a react pop up",
-  "main": "index.js",
+  "main": "lib/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
