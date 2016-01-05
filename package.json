@@ -1,13 +1,13 @@
 {
   "name": "react-poppop",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "react poppop is a react pop up",
   "main": "lib/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node devServer.js",
     "build": "npm run clean && npm run build:webpack",
     "clean": "rimraf dist",
+    "build:watch": "rm -rf ./lib && babel -w --stage 0 src --out-dir lib",
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "rm -rf ./lib && BABEL_ENV=production babel --stage 0 src --out-dir lib"
   },

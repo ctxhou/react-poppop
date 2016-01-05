@@ -5,12 +5,8 @@ export default class PopPop extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = this._display(this.props.display);
-
     this.handleOverlayClick = this.handleOverlayClick.bind(this);
-    this._display = this._display.bind(this);
-    this.hide = this.hide.bind(this);
+    this.handleCloseBtn = this.handleCloseBtn.bind(this);
   }
 
   handleOverlayClick() {
@@ -19,76 +15,64 @@ export default class PopPop extends Component {
     } = this.props;
 
     if (overlayClick) {
-      this.hide();
+      this.props.overlayClick();
     }
   }
 
-  show() {
-    this.setState(this._display('show'));
-  }
-
-  hide() {
-    this.setState(this._display('hide'));
+  handleCloseBtn() {
     if (this.props.onClose)
       this.props.onClose();
   }
 
-  // return the proper display state
-  _display(display) {
-    if (display === 'show') {
-      return {flexDisplay: 'flex', blockDisplay: 'block'};
-    } else if (display === 'hide') {
-      return {flexDisplay: 'none', blockDisplay: 'none'};
-    }
-  }
-
   render() {
-    let overlayTmpl,
-        displayStyle = {},
-        wrapperStyle,
-        closeBtnTmpl;
-    const {
-      overlay,
-      position,
-      closeBtn
-    } = this.props;
+    const {position} = this.props;
 
-    const {
-      flexDisplay,
-      blockDisplay
-    } = this.state;
+    let wrapperStyle,
+        contentStyle;
 
     if (position !== 'full')
-      wrapperStyle = Object.assign(STYLE.wrapper, STYLE[position], {display: flexDisplay});
+      wrapperStyle = Object.assign(STYLE.wrapper, STYLE[position]);
     else
-      wrapperStyle = Object.assign(STYLE.wrapper, {display: flexDisplay});
+      wrapperStyle = Object.assign(STYLE.wrapper);
 
     // merge the content style and position style
-    let contentStyle;
     if (position === 'full')
-      contentStyle = Object.assign(STYLE.content, STYLE.full, {display: blockDisplay});
+      contentStyle = Object.assign(STYLE.content, STYLE.full);
     else
-      contentStyle = Object.assign(STYLE.content, {display: blockDisplay});
+      contentStyle = Object.assign(STYLE.content);
 
-    const overlayStyle = Object.assign(STYLE.overlay, {display: blockDisplay});
-
-    if (overlay) {
-      overlayTmpl = <div style={overlayStyle} 
-                          onClick={this.handleOverlayClick}></div>;
-    }
-    if (closeBtn) {
-      closeBtnTmpl = <button style={STYLE.closeBtn}
-                              onClick={this.hide}>x</button>
-    }
 
     return (
       <div style={wrapperStyle}> 
-        {overlayTmpl}
+        {this._renderOverlay()}
         <div style={contentStyle}>
-          {closeBtnTmpl}
+          {this._renderCloseBtn()}
           {this.props.children}
         </div>
       </div>
     )
+  }
+
+  _renderCloseBtn() {
+    const {closeBtn} = this.props;
+
+    if (closeBtn) {
+      return (
+        <button style={STYLE.closeBtn} onClick={this.handleCloseBtn}>x</button>
+      )
+    }
+    return;
+  }
+
+  _renderOverlay() {
+    const {overlay} = this.props;
+    const overlayStyle = Object.assign(STYLE.overlay, {display: 'block'});
+
+    if (overlay) {
+      return (
+        <div style={overlayStyle} onClick={this.handleOverlayClick}></div>
+      )
+    }
+    return ;
   }
 }
