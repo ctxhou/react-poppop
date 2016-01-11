@@ -4,7 +4,7 @@ import PopPop from "../";
 
 ReactDOM.render(
   <PopPop overlay={true}
-          position="center"
+          position="full"
           display='show'
           closeBtn={true}
           onClose={onClose}

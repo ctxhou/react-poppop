@@ -2,7 +2,7 @@
   "name": "react-poppop",
   "version": "0.2.2",
   "description": "react poppop is a react pop up",
-  "main": "lib/",
+  "main": "lib/index.js",
   "scripts": {
     "start": "node devServer.js",
     "build": "npm run clean && npm run build:webpack",

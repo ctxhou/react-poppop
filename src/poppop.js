@@ -54,11 +54,13 @@ export default class PopPop extends Component {
   }
 
   _renderCloseBtn() {
-    const {closeBtn} = this.props;
-
+    const {closeBtn, position} = this.props;
+    let style = STYLE.closeBtn;
+    if (position === 'full')
+      style = Object.assign({}, STYLE.closeBtn, STYLE.fullCloseBtn);
     if (closeBtn) {
       return (
-        <button style={STYLE.closeBtn} onClick={this.handleCloseBtn}>x</button>
+        <div style={style} onClick={this.handleCloseBtn}>&times;</div>
       )
     }
     return;

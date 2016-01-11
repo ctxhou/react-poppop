@@ -20,7 +20,8 @@ module.exports = {
     backgroundColor: 'white',
     borderRadius: '3px',
     zIndex: 100,
-    position: 'relative'
+    position: 'relative',
+    boxShadow: '0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)'
   },
 
   center: {
@@ -55,8 +56,23 @@ module.exports = {
 
   closeBtn: {
     position: 'absolute',
-    right: '9px',
-    top: '9px',
-    backgroundColor: 'transparent'
+    right: '-15px',
+    top: '-15px',
+    backgroundColor: 'black',
+    color: 'white',
+    borderRadius: '50%',
+    boxShadow: '0 0 10px 0 #000',
+    cursor: 'pointer',
+    width:'30px',
+    height:'30px',
+    lineHeight: '34px',
+    textAlign: 'center',
+    fontSize: '13px'
+  },
+
+  fullCloseBtn: {
+    right: '0',
+    top: '0',
+    borderRadius: '0'
   }
 }
