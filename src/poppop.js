@@ -60,7 +60,7 @@ export default class PopPop extends Component {
       style = Object.assign({}, STYLE.closeBtn, STYLE.fullCloseBtn);
     if (closeBtn) {
       return (
-        <div style={style} onClick={this.handleCloseBtn}>&times;</div>
+        <div style={style} onClick={this.handleCloseBtn}>&#10006;</div>
       )
     }
     return;
