@@ -1,6 +1,6 @@
 {
   "name": "react-poppop",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "react poppop is a react pop up",
   "main": "lib/index.js",
   "scripts": {

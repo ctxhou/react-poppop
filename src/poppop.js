@@ -25,8 +25,7 @@ export default class PopPop extends Component {
   }
 
   render() {
-    const {position} = this.props;
-
+    const {position, backgoundStyle} = this.props;
     let wrapperStyle,
         contentStyle;
 
@@ -37,7 +36,7 @@ export default class PopPop extends Component {
 
     // merge the content style and position style
     if (position === 'full')
-      contentStyle = Object.assign(STYLE.content, STYLE.full);
+      contentStyle = Object.assign(STYLE.content, STYLE.full, backgoundStyle);
     else
       contentStyle = Object.assign(STYLE.content);
 
