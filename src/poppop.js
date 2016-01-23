@@ -43,7 +43,7 @@ export default class PopPop extends Component {
     const {position, backgroundStyle} = this.props;
     let wrapperStyle,
         contentStyle;
-
+    const key = this.prop.poppopKey || 'poppop';
     if (position !== 'full')
       wrapperStyle = Object.assign(STYLE.wrapper, STYLE[position]);
     else if (position)
@@ -57,7 +57,7 @@ export default class PopPop extends Component {
 
 
     return (
-      <div style={wrapperStyle}> 
+      <div style={wrapperStyle} key={key}> 
         {this._renderOverlay()}
         <div style={contentStyle}>
           {this._renderCloseBtn()}
