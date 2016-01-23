@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 
 import STYLE from './style';
 export default class PopPop extends Component {
@@ -16,8 +15,6 @@ export default class PopPop extends Component {
   }
 
   componentWillUnmount() {
-    const node = ReactDOM.findDOMNode(this.refs.poppop);
-    ReactDOM.unmountComponentAtNode(node);
     document.removeEventListener('keydown', this.handleEscKeyDown);
   }
 
@@ -60,7 +57,7 @@ export default class PopPop extends Component {
 
 
     return (
-      <div style={wrapperStyle} ref='poppop'> 
+      <div style={wrapperStyle}> 
         {this._renderOverlay()}
         <div style={contentStyle}>
           {this._renderCloseBtn()}
