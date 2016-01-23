@@ -43,21 +43,20 @@ export default class PopPop extends Component {
     const {position, backgroundStyle} = this.props;
     let wrapperStyle,
         contentStyle;
-    const key = this.props.poppopKey || 'poppop';
+
     if (position !== 'full')
       wrapperStyle = Object.assign(STYLE.wrapper, STYLE[position]);
     else if (position)
       wrapperStyle = Object.assign(STYLE.wrapper);
 
     // merge the content style and position style
-    if (position === 'full')
-      contentStyle = Object.assign(STYLE.content, STYLE.full, backgroundStyle);
-    else if (position === 'center')
-      contentStyle = Object.assign(STYLE.content, STYLE.centerContent, backgroundStyle);
-
+    if (position === 'full') 
+      contentStyle = Object.assign({}, STYLE.content, STYLE.full, backgroundStyle);
+    else if (position === 'center') 
+      contentStyle = Object.assign({}, STYLE.content, STYLE.centerContent, backgroundStyle);    // console.log(contentStyle)
 
     return (
-      <div style={wrapperStyle} key={key}> 
+      <div style={wrapperStyle}> 
         {this._renderOverlay()}
         <div style={contentStyle}>
           {this._renderCloseBtn()}

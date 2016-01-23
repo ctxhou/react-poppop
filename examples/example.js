@@ -1,43 +1,48 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import PopPop from "../";
+import PopPop from "../lib";
+import Full from './full';
+import Center from './center';
+class Example extends Component {
 
-ReactDOM.render(
-  <PopPop overlay={true}
-          position="full"
-          display='show'
-          closeBtn={true}
-          closeOnEsc={true}
-          onClose={onClose}
-          overlay={true}
-          overlayClick={onClose}
-          backgroundStyle={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
-    <div style={{"padding": "20px"}}>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
-      <h1>sjidfdsfsjdifjsdoifjoisjdfoi</h1>
-      <h1>sjidfdsfsjdifjsdoifjoisjdfoi</h1>
-      <h1>sjidfdsfsjdifjsdoifjoisjdfoi</h1>
-    </div>
-  </PopPop>, 
-  document.getElementById('root'));
+  constructor(props) {
+    super(props);
+    this.fullOpen = this.fullOpen.bind(this);
+    this.fullClose = this.fullClose.bind(this);
+    this.centerOpen = this.centerOpen.bind(this);
+    this.centerClose = this.centerClose.bind(this);
+    this.state = {full: false, center: false};
+  }
 
-function onClose() {
-  console.log('close')
+  fullOpen() {
+    this.setState({full: true});
+  }
+
+  centerOpen() {
+    this.setState({center: true});
+  }
+
+  fullClose() {
+    this.setState({full: false});
+  }
+
+  centerClose() {
+    this.setState({center: false});
+  }
+
+  render() {
+    const {full, center} = this.state;
+    return (
+      <div>
+        <button onClick={this.fullOpen}>Full open</button>
+        <button onClick={this.centerOpen}>Center open</button>
+        {full ? <Full onClose={this.fullClose}/> : null}
+        {center ? <Center onClose={this.centerClose}/> : null}
+      </div>
+    )
+  }
 }
+ReactDOM.render(
+  <Example/>, 
+  document.getElementById('root')
+);
