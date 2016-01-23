@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import STYLE from './style';
 
+import STYLE from './style';
 export default class PopPop extends Component {
 
   constructor(props) {
@@ -25,20 +25,20 @@ export default class PopPop extends Component {
   }
 
   render() {
-    const {position, backgoundStyle} = this.props;
+    const {position, backgroundStyle} = this.props;
     let wrapperStyle,
         contentStyle;
 
     if (position !== 'full')
       wrapperStyle = Object.assign(STYLE.wrapper, STYLE[position]);
-    else
+    else if (position)
       wrapperStyle = Object.assign(STYLE.wrapper);
 
     // merge the content style and position style
     if (position === 'full')
-      contentStyle = Object.assign(STYLE.content, STYLE.full, backgoundStyle);
-    else
-      contentStyle = Object.assign(STYLE.content);
+      contentStyle = Object.assign(STYLE.content, STYLE.full, backgroundStyle);
+    else if (position === 'center')
+      contentStyle = Object.assign(STYLE.content, STYLE.centerContent, backgroundStyle);
 
 
     return (

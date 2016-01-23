@@ -9,9 +9,26 @@ ReactDOM.render(
           closeBtn={true}
           onClose={onClose}
           overlay={true}
-          overlayClick={true}
-          backgoundStyle={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
+          overlayClick={onClose}
+          backgroundStyle={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
     <div style={{"padding": "20px"}}>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
+      <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
       <h1>sjidfdsfsjdjdfoisdfsdfjisdfjisdfijsifjsdifjisfjsfisf</h1>
       <h1>sjidfdsfsjdifjsdoifjoisjdfoi</h1>
       <h1>sjidfdsfsjdifjsdoifjoisjdfoi</h1>

@@ -21,12 +21,17 @@ module.exports = {
     borderRadius: '3px',
     zIndex: 100,
     position: 'relative',
-    boxShadow: '0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)'
+    boxShadow: '0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)',
+    overflow: 'scroll'
   },
 
   center: {
     verticalAlign: 'middle',
-    justifyContent: 'center'
+    justifyContent: 'center',
+  },
+
+  centerContent: {
+    maxHeight: '90%'
   },
 
   left_center: {
@@ -56,18 +61,17 @@ module.exports = {
 
   closeBtn: {
     position: 'absolute',
-    right: '-15px',
-    top: '-15px',
-    backgroundColor: 'black',
-    color: 'white',
-    borderRadius: '50%',
-    boxShadow: '0 0 10px 0 #000',
+    right: '5px',
+    top: '5px',
+    color: '#000',
+    textShadow: '0 1px 0 #fff',
+    opacity: '0.3',
     cursor: 'pointer',
-    width:'30px',
-    height:'30px',
-    lineHeight: '34px',
-    textAlign: 'center',
-    fontSize: '13px'
+    marginTop: '10px',
+    marginBottom: '10px',
+    fontSize: '20px',
+    width: '30px',
+    height: '30px'
   },
 
   fullCloseBtn: {
