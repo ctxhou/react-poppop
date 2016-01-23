@@ -15,6 +15,8 @@ export default class PopPop extends Component {
   }
 
   componentWillUnmount() {
+    const node = ReactDOM.findDOMNode(this.refs.poppop);
+    ReactDOM.unmountComponentAtNode(node);
     document.removeEventListener('keydown', this.handleEscKeyDown);
   }
 
@@ -57,7 +59,7 @@ export default class PopPop extends Component {
 
 
     return (
-      <div style={wrapperStyle}> 
+      <div style={wrapperStyle} ref='poppop'> 
         {this._renderOverlay()}
         <div style={contentStyle}>
           {this._renderCloseBtn()}
