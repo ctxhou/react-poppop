@@ -7,6 +7,7 @@ ReactDOM.render(
           position="full"
           display='show'
           closeBtn={true}
+          closeOnEsc={true}
           onClose={onClose}
           overlay={true}
           overlayClick={onClose}

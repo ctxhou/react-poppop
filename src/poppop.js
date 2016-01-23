@@ -7,6 +7,15 @@ export default class PopPop extends Component {
     super(props);
     this.handleOverlayClick = this.handleOverlayClick.bind(this);
     this.handleCloseBtn = this.handleCloseBtn.bind(this);
+    this.handleEscKeyDown = this.handleEscKeyDown.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleEscKeyDown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleEscKeyDown);
   }
 
   handleOverlayClick() {
@@ -22,6 +31,12 @@ export default class PopPop extends Component {
   handleCloseBtn() {
     if (this.props.onClose)
       this.props.onClose();
+  }
+
+  handleEscKeyDown(e) {
+    if (this.props.closeOnEsc && e.keyCode === 27) {
+      this.props.onClose();
+    }
   }
 
   render() {
