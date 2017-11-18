@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render no props 1`] = `
+<PopPop
+  open={true}
+  overlayStyle={Object {}}
+  position="topCenter"
+>
+  <Transition
+    appear={true}
+    enter={true}
+    exit={true}
+    in={true}
+    mountOnEnter={false}
+    onEnter={[Function]}
+    onEntered={[Function]}
+    onEntering={[Function]}
+    onExit={[Function]}
+    onExited={[Function]}
+    onExiting={[Function]}
+    timeout={100}
+    unmountOnExit={false}
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "bottom": "0",
+          "display": "flex",
+          "justifyContent": "center",
+          "left": "0",
+          "opacity": 0,
+          "overflowX": "hidden",
+          "overflowY": "auto",
+          "padding": "20px",
+          "position": "fixed",
+          "right": "0",
+          "top": "0",
+          "transition": "opacity .2s linear",
+          "visibility": "visible",
+          "zIndex": "1000",
+        }
+      }
+    >
+      <Tappable
+        activeDelay={0}
+        classBase="Tappable"
+        component="span"
+        moveThreshold={100}
+        onTap={[Function]}
+        pressDelay={1000}
+        pressMoveThreshold={5}
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0.6)",
+            "height": "100%",
+            "left": 0,
+            "position": "fixed",
+            "top": 0,
+            "width": "100%",
+            "zIndex": 99,
+          }
+        }
+      >
+        <span
+          className="Tappable-inactive"
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseOut={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          style={
+            Object {
+              "KhtmlUserSelect": "none",
+              "MozUserSelect": "none",
+              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+              "WebkitTouchCallout": "none",
+              "WebkitUserSelect": "none",
+              "backgroundColor": "rgba(0,0,0,0.6)",
+              "cursor": "pointer",
+              "height": "100%",
+              "left": 0,
+              "msUserSelect": "none",
+              "position": "fixed",
+              "top": 0,
+              "userSelect": "none",
+              "width": "100%",
+              "zIndex": 99,
+            }
+          }
+        />
+      </Tappable>
+      <div
+        style={
+          Object {
+            "backgroundColor": "white",
+            "borderRadius": "3px",
+            "boxShadow": "0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)",
+            "maxWidth": "850px",
+            "overflow": "scroll",
+            "padding": "10px 20px",
+            "position": "relative",
+            "transition": "all 0.3s",
+            "zIndex": 2000,
+          }
+        }
+      >
+        content
+      </div>
+    </div>
+  </Transition>
+</PopPop>
+`;
