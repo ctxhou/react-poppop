@@ -7,11 +7,11 @@ import ShortContent from './components/ShortContent';
 export default class Root extends React.Component {
   render() {
     return (
-      <div className="avenir">
-        <div className="mw8 center mb4">
-          <h1 className="f1">React Poppop</h1>
+      <div className="code">
+        <div className="mw8 center mb4" style={{textAlign: 'center'}}>
+          <h1 className="f1">React PopPop</h1>
           <p className="f3">
-            💃 A mobile support, flexible and beautiful Tab for ReactJS. 💃
+            A responsive, mobile support and multi directions modal for ReactJS.
           </p>
           <a className="github-button" href="https://github.com/ctxhou/react-poppop" data-size="large" data-show-count="true" aria-label="Star ctxhou/react-poppop on GitHub">Star</a>
           <div>
@@ -21,11 +21,22 @@ export default class Root extends React.Component {
               Document
             </a>            
           </div>
+          <hr className="ma4"/>
+          <div className="ph3-ns">
+            <div className="cf ph2-ns">
+              <div className="fl w-100 w-third-ns pa2">
+                <AllPosition/>
+              </div>
+              <div className="fl w-100 w-third-ns pa2">
+                <LongContent/>
+              </div>
+              <div className="fl w-100 w-third-ns pa2">
+                <ShortContent/>
+              </div>
+            </div>
+          </div>
         </div>
-        <AllPosition/>
-        <LongContent/>
-        <ShortContent/>
-        <footer className="pv4 ph3 ph5-m ph6-l mid-gray">
+        <footer className="pv4 ph3 ph5-m ph6-l mid-gray mt7">
           <small className="f6 db tc">Maintained by <a href="https://github.com/ctxhou">@ctxhou</a></small>
           <div className="tc mt3">
             <a className="link dim gray dib br-100 h2 w2 mr3 " href="https://github.com/ctxhou/react-poppop" title="">

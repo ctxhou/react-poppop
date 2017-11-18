@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PopPop from '../../src';
 import {overlay} from '../../src/style';
+import Button from './Button';
 
 export default class AllPosition extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class AllPosition extends Component {
     ]
     return (
       <div>
-        <button className="btn btn-default" onClick={() => this.toggleShow(true)}>Show Modal</button>
+        <Button onClick={() => this.toggleShow(true)}>Multi Directions</Button>
         {show ?
           <div style={overlay}></div>
         : null}

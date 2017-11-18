@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   wrapper: {
     transition: 'opacity .2s linear',
     opacity: 0,

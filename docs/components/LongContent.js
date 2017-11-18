@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PopPop from '../../src';
 import {overlay} from '../../src/style';
+import Button from './Button';
 
 export default class LongContent extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export default class LongContent extends Component {
     const {show} = this.state;
     return (
       <div>
-        <button className="btn btn-default" onClick={() => this.toggleShow(true)}>Show Modal</button>
+        <Button onClick={() => this.toggleShow(true)}>Long Content</Button>
         <PopPop open={show}
                 closeBtn={true}
                 closeOnEsc={true}

@@ -2,6 +2,7 @@
 
 exports[`render no props 1`] = `
 <PopPop
+  closeOnOverlay={true}
   open={true}
   overlayStyle={Object {}}
   position="topCenter"

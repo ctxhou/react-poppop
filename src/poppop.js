@@ -8,16 +8,18 @@ import styles from './style';
 export default class PopPop extends Component {
   static defaultProps = {
     position: 'topCenter',
+    closeOnOverlay: true,
     overlayStyle: {}
   };
 
   static propTypes = {
     open: PropTypes.bool,
     closeBtn: PropTypes.bool,
-    overlayStyle: PropTypes.object,
-    contentStyle: PropTypes.object,
     closeOnOverlay: PropTypes.bool,
     closeOnEsc: PropTypes.bool,
+    onClose: PropTypes.func,
+    overlayStyle: PropTypes.object,
+    contentStyle: PropTypes.object,
     position: PropTypes.oneOf([
       'topLeft', 'topCenter', 'topRight',
       'centerLeft', 'centerCenter', 'centerRight',
