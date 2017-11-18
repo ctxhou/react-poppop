@@ -36,7 +36,7 @@ export default class Root extends React.Component {
             </div>
           </div>
         </div>
-        <footer className="pv4 ph3 ph5-m ph6-l mid-gray mt7">
+        <footer className="pv4 ph3 ph5-m ph6-l mid-gray mt6-m">
           <small className="f6 db tc">Maintained by <a href="https://github.com/ctxhou">@ctxhou</a></small>
           <div className="tc mt3">
             <a className="link dim gray dib br-100 h2 w2 mr3 " href="https://github.com/ctxhou/react-poppop" title="">
