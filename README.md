@@ -8,7 +8,6 @@
 ![codecov][codecov]
 ![Maintainability][Maintainability]
 ![download][download]
-![gzip size][gzip size]
 
 ### [Demo](https://ctxhou.github.io/react-poppop/)
 
@@ -16,7 +15,6 @@
 [travis]:          https://travis-ci.org/ctxhou/react-poppop.svg?branch=master
 [david]:           https://david-dm.org/ctxhou/react-poppop.svg
 [download]:        https://img.shields.io/npm/dm/react-poppop.svg
-[gzip size]:       https://img.badgesize.io/https://unpkg.com/react-poppop/dist/react-poppop.min.js?compression=gzip
 [Maintainability]: https://api.codeclimate.com/v1/badges/b1738dd58819561b4e25/maintainability
 [codecov]:         https://codecov.io/gh/ctxhou/react-poppop/branch/master/graph/badge.svg
 
