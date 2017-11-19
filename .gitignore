@@ -1,4 +1,5 @@
 node_modules
+bundle-stats.html
 yarn.lock
 lib
 .DS_Store
