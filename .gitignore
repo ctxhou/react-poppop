@@ -4,3 +4,4 @@ yarn.lock
 lib
 .DS_Store
 _gh-pages/
+coverage

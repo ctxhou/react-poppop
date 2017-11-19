@@ -26,17 +26,26 @@ export default class Root extends React.Component {
             <div className="cf ph2-ns">
               <div className="fl w-100 w-third-ns pa2">
                 <AllPosition/>
+                <div className="mt2">
+                  <a href="https://github.com/ctxhou/react-poppop/blob/master/docs/components/allPosition.js" className="green">Source code</a>                  
+                </div>
               </div>
               <div className="fl w-100 w-third-ns pa2">
                 <LongContent/>
+                <div className="mt2">
+                  <a href="https://github.com/ctxhou/react-poppop/blob/master/docs/components/LongContent.js" className="green">Source code</a>                  
+                </div>
               </div>
               <div className="fl w-100 w-third-ns pa2">
                 <ShortContent/>
+                <div className="mt2">
+                  <a href="https://github.com/ctxhou/react-poppop/blob/master/docs/components/ShortContent.js" className="green">Source code</a>                  
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <footer className="pv4 ph3 ph5-m ph6-l mid-gray mt6-m">
+        <footer className="pv4 ph3 ph5-m ph6-l mid-gray mt6-m mt6-l">
           <small className="f6 db tc">Maintained by <a href="https://github.com/ctxhou">@ctxhou</a></small>
           <div className="tc mt3">
             <a className="link dim gray dib br-100 h2 w2 mr3 " href="https://github.com/ctxhou/react-poppop" title="">
