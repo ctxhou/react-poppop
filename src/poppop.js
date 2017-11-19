@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Tappable from 'react-tappable/lib/Tappable';
 import {Transition} from 'react-transition-group';
-import Portal from './Portal';
+import Portal from './portal';
 import {extractCamelCase} from './utils';
 import styles from './style';
 

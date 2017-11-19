@@ -22,6 +22,17 @@
 * **Multi directions** — support 9 positions. ↑ ↗ ︎→ ↘ ︎↓ ↙ ︎← ↖ ︎⥁
 * **Easily customize style**
 
+<!-- toc -->
+
+- [Installation](#installation)
+- [Usage](#usage)
+  * [Minimum Config](#minimum-config)
+  * [Multi directions - 9 positions](#multi-directions---9-positions)
+  * [Controllable](#controllable)
+- [Props](#props)
+- [License](#license)
+
+<!-- tocstop -->
 
 ## Installation
 

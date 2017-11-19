@@ -1,3 +1,3 @@
-import PopPop from './PopPop';
+import PopPop from './poppop';
 
 export default PopPop;
