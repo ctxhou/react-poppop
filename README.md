@@ -12,10 +12,10 @@
 
 ### [Demo](https://ctxhou.github.io/react-poppop/)
 
-[version]:         https://img.shields.io/npm/v/react-poppop.svg?maxAge=2592000
+[version]:         https://img.shields.io/npm/v/react-poppop.svg
 [travis]:          https://travis-ci.org/ctxhou/react-poppop.svg?branch=master
 [david]:           https://david-dm.org/ctxhou/react-poppop.svg
-[download]:        https://img.shields.io/npm/dm/react-poppop.svg?maxAge=2592000
+[download]:        https://img.shields.io/npm/dm/react-poppop.svg
 [gzip size]:       http://img.badgesize.io/https://unpkg.com/react-poppop/dist/react-poppop.min.js?compression=gzip
 [Maintainability]: https://api.codeclimate.com/v1/badges/b1738dd58819561b4e25/maintainability
 [codecov]:         https://codecov.io/gh/ctxhou/react-poppop/branch/master/graph/badge.svg
