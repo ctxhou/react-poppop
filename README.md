@@ -3,6 +3,7 @@
 > A responsive, mobile support, multi directions and easy to use modal for ReactJS. 
 
 ![version][version]
+![travis][travis]
 ![david][david]
 ![download][download]
 ![gzip size][gzip size]
@@ -10,6 +11,7 @@
 ### [Demo](https://ctxhou.github.io/react-poppop/)
 
 [version]:     https://img.shields.io/npm/v/react-poppop.svg?maxAge=2592000
+[travis]:      https://travis-ci.org/ctxhou/react-poppop.svg?branch=master
 [david]:       https://david-dm.org/ctxhou/react-poppop.svg
 [download]:    https://img.shields.io/npm/dm/react-poppop.svg?maxAge=2592000
 [gzip size]:   http://img.badgesize.io/https://unpkg.com/react-poppop/dist/react-poppop.min.js?compression=gzip
@@ -221,7 +223,7 @@ export default class Example extends Component {
     <tr>
       <td>contentStyle</td>
       <td><code>object</code></td>
-      <td>reference: <a href="https://github.com/ctxhou/react-poppop/blob/master/src/style.js#L17-L25">link</a></td>
+      <td>reference: <a href="https://github.com/ctxhou/react-poppop/blob/master/src/style.js#L48-L58">link</a></td>
       <td>customize content style</td>
     </tr>
   </tbody>
