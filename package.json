@@ -1,6 +1,6 @@
 {
   "name": "react-poppop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react poppop is a react pop up",
   "main": "lib/index.js",
   "scripts": {
@@ -29,8 +29,11 @@
   ],
   "keywords": [
     "react",
-    "poppop",
-    "react-poppop"
+    "modal",
+    "popup",
+    "dialog",
+    "react-poppop",
+    "react-component"
   ],
   "author": "ctxhou",
   "license": "MIT",
