@@ -9,8 +9,8 @@
 
 ### [Demo](https://ctxhou.github.io/react-poppop/)
 
-[avid]:       https://david-dm.org/ctxhou/react-poppop.svg
 [version]:     https://img.shields.io/npm/v/react-poppop.svg?maxAge=2592000
+[david]:       https://david-dm.org/ctxhou/react-poppop.svg
 [download]:    https://img.shields.io/npm/dm/react-poppop.svg?maxAge=2592000
 [gzip size]:   http://img.badgesize.io/https://unpkg.com/react-poppop/dist/react-poppop.min.js?compression=gzip
 
@@ -21,6 +21,8 @@
 * **Mobile support** — Responsive and support tap action.
 * **Multi directions** — support 9 positions. ↑ ↗ ︎→ ↘ ︎↓ ↙ ︎← ↖ ︎⥁
 * **Easily customize style**
+
+## Table of Contents
 
 <!-- toc -->
 
