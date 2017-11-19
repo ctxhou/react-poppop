@@ -5,18 +5,20 @@
 ![version][version]
 ![travis][travis]
 ![david][david]
+![codecov][codecov]
 ![Maintainability][Maintainability]
 ![download][download]
 ![gzip size][gzip size]
 
 ### [Demo](https://ctxhou.github.io/react-poppop/)
 
-[version]:     https://img.shields.io/npm/v/react-poppop.svg?maxAge=2592000
-[travis]:      https://travis-ci.org/ctxhou/react-poppop.svg?branch=master
-[david]:       https://david-dm.org/ctxhou/react-poppop.svg
-[download]:    https://img.shields.io/npm/dm/react-poppop.svg?maxAge=2592000
-[gzip size]:   http://img.badgesize.io/https://unpkg.com/react-poppop/dist/react-poppop.min.js?compression=gzip
+[version]:         https://img.shields.io/npm/v/react-poppop.svg?maxAge=2592000
+[travis]:          https://travis-ci.org/ctxhou/react-poppop.svg?branch=master
+[david]:           https://david-dm.org/ctxhou/react-poppop.svg
+[download]:        https://img.shields.io/npm/dm/react-poppop.svg?maxAge=2592000
+[gzip size]:       http://img.badgesize.io/https://unpkg.com/react-poppop/dist/react-poppop.min.js?compression=gzip
 [Maintainability]: https://api.codeclimate.com/v1/badges/b1738dd58819561b4e25/maintainability
+[codecov]:         https://codecov.io/gh/ctxhou/react-poppop/branch/master/graph/badge.svg
 
 ![img](https://i.imgur.com/8HMXcOi.png)
 
@@ -230,12 +232,6 @@ export default class Example extends Component {
     </tr>
   </tbody>
 </table>
-
-<hr/>
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/JDp3hU9w4jx9Pm8ecP6DL8gq/ctxhou/react-poppop'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/JDp3hU9w4jx9Pm8ecP6DL8gq/ctxhou/react-poppop.svg' />
-</a>
 
 ## License
 
