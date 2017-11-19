@@ -7,7 +7,7 @@
 ![download][download]
 ![gzip size][gzip size]
 
-### [Demo](http://ctxhou.github.io/react-poppop/)
+### [Demo](https://ctxhou.github.io/react-poppop/)
 
 [avid]:       https://david-dm.org/ctxhou/react-poppop.svg
 [version]:     https://img.shields.io/npm/v/react-poppop.svg?maxAge=2592000
@@ -197,7 +197,7 @@ export default class Example extends Component {
         <code>object</code>
       </td>
       <td>
-        reference: <a href="#">link</a>
+        reference: <a href="https://github.com/ctxhou/react-poppop/blob/master/src/style.js#L17-L25">link</a>
       </td>
       <td>
         customize overlay style
@@ -206,7 +206,7 @@ export default class Example extends Component {
     <tr>
       <td>contentStyle</td>
       <td><code>object</code></td>
-      <td>reference: <a href="#">link</a></td>
+      <td>reference: <a href="https://github.com/ctxhou/react-poppop/blob/master/src/style.js#L17-L25">link</a></td>
       <td>customize content style</td>
     </tr>
   </tbody>

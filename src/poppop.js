@@ -2,10 +2,15 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Tappable from 'react-tappable/lib/Tappable';
 import {Transition} from 'react-transition-group';
+import Portal from './Portal';
 import {extractCamelCase} from './utils';
 import styles from './style';
 
 export default class PopPop extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   static defaultProps = {
     position: 'topCenter',
     closeOnOverlay: true,
@@ -79,21 +84,23 @@ export default class PopPop extends Component {
     if (!open) return null;
 
     return (
-      <Transition in={open} appear timeout={100}>
-        {state => {
-          return <div style={{
-                ...mergeWrapperStyle,
-                ...styles.transitionStyles[state]
-               }}>
-            <Tappable onTap={this.handleOverlayClick}
-                      style={mergeOverlayStyle}/>
-            <div style={mergeContentStyle}>
-              {this._renderCloseBtn()}
-              {this.props.children}
+      <Portal>
+        <Transition in={open} appear timeout={100}>
+          {state => {
+            return <div style={{
+                  ...mergeWrapperStyle,
+                  ...styles.transitionStyles[state]
+                 }}>
+              <Tappable onTap={this.handleOverlayClick}
+                        style={mergeOverlayStyle}/>
+              <div style={mergeContentStyle}>
+                {this._renderCloseBtn()}
+                {this.props.children}
+              </div>
             </div>
-          </div>
-        }}
-      </Transition>
+          }}
+        </Transition>
+      </Portal>
     )
   }
 
