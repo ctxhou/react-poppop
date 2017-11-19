@@ -16,7 +16,7 @@
 [download]:    https://img.shields.io/npm/dm/react-poppop.svg?maxAge=2592000
 [gzip size]:   http://img.badgesize.io/https://unpkg.com/react-poppop/dist/react-poppop.min.js?compression=gzip
 
-<img src="https://i.imgur.com/8HMXcOi.png" alt="">
+![img](https://i.imgur.com/8HMXcOi.png)
 
 ## Features
 
@@ -228,6 +228,12 @@ export default class Example extends Component {
     </tr>
   </tbody>
 </table>
+
+<hr/>
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/JDp3hU9w4jx9Pm8ecP6DL8gq/ctxhou/react-poppop'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/JDp3hU9w4jx9Pm8ecP6DL8gq/ctxhou/react-poppop.svg' />
+</a>
 
 ## License
 
