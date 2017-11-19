@@ -10,6 +10,7 @@ export default class Portal extends Component {
   constructor(props) {
     super(props);
     this.el = document.createElement('div');
+    document.body.appendChild(this.el);
     this.originBodyOverflow = document.body.style.overflow;
     this.isHidden = this.originBodyOverflow === 'hidden';
 
@@ -19,11 +20,7 @@ export default class Portal extends Component {
   }
 
   componentDidMount() {
-    if (hasCreatePortal) {
-      document.body.appendChild(this.el);      
-    } else {
-      ReactDom.unstable_renderSubtreeIntoContainer(this, this.props.children, this.el);
-    }
+    this.renderUnstableSubtree();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -48,6 +45,12 @@ export default class Portal extends Component {
       document.body.removeChild(this.el);
     } else {
       ReactDOM.unmountComponentAtNode(this.el);
+    }
+  }
+
+  renderUnstableSubtree() {
+    if (!hasCreatePortal) {
+      ReactDOM.unstable_renderSubtreeIntoContainer(this, this.props.children, this.el);
     }
   }
 

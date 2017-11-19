@@ -20,7 +20,7 @@ exports[`render no props 1`] = `
       onExit={[Function]}
       onExited={[Function]}
       onExiting={[Function]}
-      timeout={100}
+      timeout={0}
       unmountOnExit={false}
     >
       <div

@@ -85,7 +85,7 @@ export default class PopPop extends Component {
 
     return (
       <Portal>
-        <Transition in={open} appear timeout={100}>
+        <Transition in={open} appear timeout={0}>
           {state => {
             return <div style={{
                   ...mergeWrapperStyle,

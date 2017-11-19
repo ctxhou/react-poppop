@@ -52,6 +52,8 @@ For example:
 <script src="https://unpkg.com/react-poppop/dist/react-poppop.min.js"></script>
 ```
 
+You can reference [standalone.html](https://github.com/ctxhou/react-poppop/blob/master/docs/standalone.html) example.
+
 ## Usage
 
 ### Minimum Config

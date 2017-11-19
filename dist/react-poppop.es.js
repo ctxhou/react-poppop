@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _propTypes from 'prop-types';
-import reactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 
 'use strict';
 
@@ -108,7 +108,7 @@ var Mixin$1 = {
 		this._scrollPos = { top: 0, left: 0 };
 		this._scrollParents = [];
 		this._scrollParentPos = [];
-		var node = reactDom.findDOMNode(this);
+		var node = ReactDOM.findDOMNode(this);
 
 		while (node) {
 			if (node.scrollHeight > node.offsetHeight || node.scrollWidth > node.offsetWidth) {
@@ -1783,7 +1783,7 @@ var Transition_1 = createCommonjsModule(function (module, exports) {
 
   var _react2 = _interopRequireDefault(React);
 
-  var _reactDom2 = _interopRequireDefault(reactDom);
+  var _reactDom2 = _interopRequireDefault(ReactDOM);
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -3113,6 +3113,79 @@ var reactTransitionGroup = createCommonjsModule(function (module) {
 unwrapExports(reactTransitionGroup);
 var reactTransitionGroup_1 = reactTransitionGroup.Transition;
 
+var hasCreatePortal = ReactDOM.createPortal !== undefined;
+var Portal = function (_Component) {
+  inherits(Portal, _Component);
+
+  function Portal(props) {
+    classCallCheck(this, Portal);
+
+    var _this = possibleConstructorReturn(this, (Portal.__proto__ || Object.getPrototypeOf(Portal)).call(this, props));
+
+    _this.el = document.createElement('div');
+    document.body.appendChild(_this.el);
+    _this.originBodyOverflow = document.body.style.overflow;
+    _this.isHidden = _this.originBodyOverflow === 'hidden';
+
+    if (!_this.isHidden) {
+      document.body.style.overflow = 'hidden';
+    }
+    return _this;
+  }
+
+  createClass(Portal, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.renderUnstableSubtree();
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (!nextProps.open) {
+        this.resetBodyOverflow();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.removePortal();
+      this.resetBodyOverflow();
+    }
+  }, {
+    key: 'resetBodyOverflow',
+    value: function resetBodyOverflow() {
+      if (!this.isHidden) {
+        document.body.style.overflow = this.originBodyOverflow;
+      }
+    }
+  }, {
+    key: 'removePortal',
+    value: function removePortal() {
+      if (hasCreatePortal) {
+        document.body.removeChild(this.el);
+      } else {
+        ReactDOM.unmountComponentAtNode(this.el);
+      }
+    }
+  }, {
+    key: 'renderUnstableSubtree',
+    value: function renderUnstableSubtree() {
+      if (!hasCreatePortal) {
+        ReactDOM.unstable_renderSubtreeIntoContainer(this, this.props.children, this.el);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (hasCreatePortal) {
+        return ReactDOM.createPortal(this.props.children, this.el);
+      }
+      return null;
+    }
+  }]);
+  return Portal;
+}(Component);
+
 var extractCamelCase = function extractCamelCase(s) {
   return s.split(/(?=[A-Z])/).map(function (p) {
     return p.charAt(0).toUpperCase() + p.slice(1);
@@ -3204,30 +3277,30 @@ var styles = {
 var PopPop$1 = function (_Component) {
   inherits(PopPop, _Component);
 
-  function PopPop() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
+  function PopPop(props) {
     classCallCheck(this, PopPop);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+    var _this = possibleConstructorReturn(this, (PopPop.__proto__ || Object.getPrototypeOf(PopPop)).call(this, props));
 
-    return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = PopPop.__proto__ || Object.getPrototypeOf(PopPop)).call.apply(_ref, [this].concat(args))), _this), _this.handleOverlayClick = function () {
+    _this.handleOverlayClick = function () {
       if (_this.props.closeOnOverlay) {
         _this.props.onClose();
       }
-    }, _this.handleCloseBtn = function () {
+    };
+
+    _this.handleCloseBtn = function () {
       if (_this.props.onClose) {
         _this.props.onClose();
       }
-    }, _this.handleEscKeyDown = function (e) {
+    };
+
+    _this.handleEscKeyDown = function (e) {
       if (_this.props.closeOnEsc && e.keyCode === 27) {
         _this.props.onClose();
       }
-    }, _temp), possibleConstructorReturn(_this, _ret);
+    };
+
+    return _this;
   }
 
   createClass(PopPop, [{
@@ -3265,22 +3338,26 @@ var PopPop$1 = function (_Component) {
       if (!open) return null;
 
       return React.createElement(
-        reactTransitionGroup_1,
-        { 'in': open, appear: true, timeout: 100 },
-        function (state) {
-          return React.createElement(
-            'div',
-            { style: _extends$1({}, mergeWrapperStyle, styles.transitionStyles[state]) },
-            React.createElement(Tappable, { onTap: _this2.handleOverlayClick,
-              style: mergeOverlayStyle }),
-            React.createElement(
+        Portal,
+        null,
+        React.createElement(
+          reactTransitionGroup_1,
+          { 'in': open, appear: true, timeout: 0 },
+          function (state) {
+            return React.createElement(
               'div',
-              { style: mergeContentStyle },
-              _this2._renderCloseBtn(),
-              _this2.props.children
-            )
-          );
-        }
+              { style: _extends$1({}, mergeWrapperStyle, styles.transitionStyles[state]) },
+              React.createElement(Tappable, { onTap: _this2.handleOverlayClick,
+                style: mergeOverlayStyle }),
+              React.createElement(
+                'div',
+                { style: mergeContentStyle },
+                _this2._renderCloseBtn(),
+                _this2.props.children
+              )
+            );
+          }
+        )
       );
     }
   }, {
