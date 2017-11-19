@@ -1,94 +1,119 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import Tappable from 'react-tappable/lib/Tappable';
+import {Transition} from 'react-transition-group';
+import Portal from './Portal';
+import {extractCamelCase} from './utils';
+import styles from './style';
 
-import STYLE from './style';
 export default class PopPop extends Component {
-
   constructor(props) {
     super(props);
-    this.handleOverlayClick = this.handleOverlayClick.bind(this);
-    this.handleCloseBtn = this.handleCloseBtn.bind(this);
-    this.handleEscKeyDown = this.handleEscKeyDown.bind(this);
+  }
+
+  static defaultProps = {
+    position: 'topCenter',
+    closeOnOverlay: true,
+    overlayStyle: {}
+  };
+
+  static propTypes = {
+    open: PropTypes.bool,
+    closeBtn: PropTypes.bool,
+    closeOnOverlay: PropTypes.bool,
+    closeOnEsc: PropTypes.bool,
+    onClose: PropTypes.func,
+    overlayStyle: PropTypes.object,
+    contentStyle: PropTypes.object,
+    position: PropTypes.oneOf([
+      'topLeft', 'topCenter', 'topRight',
+      'centerLeft', 'centerCenter', 'centerRight',
+      'bottomLeft', 'bottomCenter', 'bottomRight',
+    ])
   }
 
   componentDidMount() {
-    document.addEventListener('keydown', this.handleEscKeyDown);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleEscKeyDown);
-  }
-
-  handleOverlayClick() {
-    const {
-      overlayClick
-    } = this.props;
-
-    if (overlayClick) {
-      this.props.overlayClick();
+    if (this.props.closeOnEsc) {
+      document.addEventListener('keydown', this.handleEscKeyDown);
     }
   }
 
-  handleCloseBtn() {
-    if (this.props.onClose)
-      this.props.onClose();
+  componentWillUnmount() {
+    if (this.props.closeOnEsc) {
+      document.removeEventListener('keydown', this.handleEscKeyDown);      
+    }
   }
 
-  handleEscKeyDown(e) {
+  handleOverlayClick = () => {
+    if (this.props.closeOnOverlay) {
+      this.props.onClose();
+    }
+  }
+
+  handleCloseBtn = () => {
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
+  }
+
+  handleEscKeyDown = (e) => {
     if (this.props.closeOnEsc && e.keyCode === 27) {
       this.props.onClose();
     }
   }
 
   render() {
-    const {position} = this.props;
-    const _contentStyle = this.props.contentStyle;
-    let wrapperStyle,
-        contentStyle;
+    const {open, position, overlayStyle, contentStyle} = this.props;
+    const extractPosition = extractCamelCase(position);
+    const mergeWrapperStyle = {
+      ...styles.wrapper,
+      ...styles.alignItems[extractPosition[0]],
+      ...styles.justifyContent[extractPosition[1]]
+    }
 
-    if (position !== 'full')
-      wrapperStyle = Object.assign({}, STYLE.wrapper, STYLE[position]);
-    else if (position)
-      wrapperStyle = Object.assign({}, STYLE.wrapper);
+    const mergeOverlayStyle = {
+      ...styles.overlay,
+      ...overlayStyle
+    }
 
-    // merge the content style and position style
-    if (position === 'full') 
-      contentStyle = Object.assign({}, STYLE.content, STYLE.full, _contentStyle);
-    else if (position === 'center') 
-      contentStyle = Object.assign({}, STYLE.content, STYLE.centerContent, _contentStyle);    // console.log(contentStyle)
+    const mergeContentStyle = {
+      ...styles.content,
+      ...contentStyle
+    }
+
+    if (!open) return null;
 
     return (
-      <div style={wrapperStyle}> 
-        {this._renderOverlay()}
-        <div style={contentStyle}>
-          {this._renderCloseBtn()}
-          {this.props.children}
-        </div>
-      </div>
+      <Portal>
+        <Transition in={open} appear timeout={0}>
+          {state => {
+            return <div style={{
+                  ...mergeWrapperStyle,
+                  ...styles.transitionStyles[state]
+                 }}>
+              <Tappable onTap={this.handleOverlayClick}
+                        style={mergeOverlayStyle}/>
+              <div style={mergeContentStyle}>
+                {this._renderCloseBtn()}
+                {this.props.children}
+              </div>
+            </div>
+          }}
+        </Transition>
+      </Portal>
     )
   }
 
   _renderCloseBtn() {
-    const {closeBtn, position} = this.props;
-    let style = STYLE.closeBtn;
-    if (position === 'full')
-      style = Object.assign({}, STYLE.closeBtn, STYLE.fullCloseBtn);
-    if (closeBtn) {
+    if (this.props.closeBtn) {
       return (
-        <div style={style} onClick={this.handleCloseBtn}>&#10006;</div>
-      )
+        <div style={styles.closeBtn} onClick={this.handleCloseBtn}>
+          <svg viewBox="0 0 40 40">
+            <g><path d="m31.6 10.7l-9.3 9.3 9.3 9.3-2.3 2.3-9.3-9.3-9.3 9.3-2.3-2.3 9.3-9.3-9.3-9.3 2.3-2.3 9.3 9.3 9.3-9.3z"/></g>
+          </svg>
+        </div>
+      );
     }
-    return;
-  }
-
-  _renderOverlay() {
-    const {overlay} = this.props;
-    const overlayStyle = Object.assign(STYLE.overlay, {display: 'block'});
-
-    if (overlay) {
-      return (
-        <div style={overlayStyle} onClick={this.handleOverlayClick}></div>
-      )
-    }
-    return ;
+    return null;
   }
 }
