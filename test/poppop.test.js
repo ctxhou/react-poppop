@@ -49,7 +49,7 @@ describe('props', () => {
     expect(component.find('div').get(1).props.style).toMatchObject({background: 'red'});
   })
 
-  it('close button', () => {
+  it('has close button & trigger onClose', () => {
     const mockClose = jest.fn();
     const component = mount(shareComponent({onClose: mockClose, closeBtn: true}));
     component.find('svg').at(0).simulate('click');

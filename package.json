@@ -16,7 +16,7 @@
     "gh-pages:publish": "git-directory-deploy --directory _gh-pages --branch gh-pages",
     "prepublish": "npm run build",
     "validate": "npm ls",
-    "ci": "npm test && codecov"
+    "ci": "npm test -- --coverage && codecov"
   },
   "repository": {
     "type": "git",
@@ -119,9 +119,7 @@
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ],
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
+    ]
   },
   "pre-commit": [
     "lint",

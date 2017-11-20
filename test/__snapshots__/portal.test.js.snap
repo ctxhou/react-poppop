@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `
+<Portal>
+  <div>
+    hi
+  </div>
+</Portal>
+`;

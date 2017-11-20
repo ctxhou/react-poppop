@@ -36,9 +36,10 @@ export default class AllPosition extends Component {
                   closeOnEsc={true}
                   onClose={() => this.toggleShow(false)}
                   closeOnOverlay={true}
-                  overlayStyle={{backgroundColor: 'transparent'}}>
+                  overlayStyle={{backgroundColor: 'transparent'}}
+                  contentStyle={{padding: '5px 3px'}}>
             <div style={{textAlign: 'center'}}>
-              <h3>{position}</h3>
+              <h4>{position}</h4>
             </div>
           </PopPop>
         )}
