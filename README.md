@@ -2,6 +2,8 @@
 
 > A responsive, mobile support, multi directions and easy to use modal for ReactJS. 
 
+Compatible with React 15 and 16.
+
 ![version][version]
 ![travis][travis]
 ![david][david]
@@ -25,6 +27,7 @@
 * **Mobile support** — Responsive and support tap action.
 * **Multi directions** — support 9 positions. ↑ ↗ ︎→ ↘ ︎↓ ↙ ︎← ↖ ︎⥁
 * **Easily customize style**
+* **React v16 portal** — Using react v16 official portal API. Also backward compatible with v15
 
 ## Table of Contents
 
