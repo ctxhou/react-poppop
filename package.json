@@ -15,8 +15,7 @@
     "gh-pages:build": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "gh-pages:publish": "git-directory-deploy --directory _gh-pages --branch gh-pages",
     "prepublishOnly": "npm run build",
-    "validate": "npm ls",
-    "ci": "npm test -- --coverage && codecov"
+    "validate": "npm ls"
   },
   "repository": {
     "type": "git",

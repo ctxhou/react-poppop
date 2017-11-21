@@ -4,21 +4,15 @@
 
 Compatible with React 15 and 16.
 
-![version][https://www.npmjs.com/package/react-poppop/]
-![travis][https://travis-ci.org/ctxhou/react-poppop]
-![david][david]
-![codecov][https://codecov.io/gh/ctxhou/react-poppop]
-![Maintainability][https://codeclimate.com/github/ctxhou/react-poppop]
-![download][download]
+[![version](https://img.shields.io/npm/v/react-poppop.svg)](https://www.npmjs.com/package/react-poppop/)
+[![travis](https://travis-ci.org/ctxhou/react-poppop.svg?branch=master)](https://travis-ci.org/ctxhou/react-poppop)
+[![Build status](https://ci.appveyor.com/api/projects/status/y1a4ua5ld0gnl7wt?svg=true)](https://ci.appveyor.com/project/ctxhou/react-poppop)
+![david](https://david-dm.org/ctxhou/react-poppop.svg)
+[![codecov](https://codecov.io/gh/ctxhou/react-poppop/branch/master/graph/badge.svg)](https://codecov.io/gh/ctxhou/react-poppop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b1738dd58819561b4e25/maintainability)](https://codeclimate.com/github/ctxhou/react-poppop)
+![download](https://img.shields.io/npm/dm/react-poppop.svg)
 
 ### [Demo](https://ctxhou.github.io/react-poppop/)
-
-[version]:         https://img.shields.io/npm/v/react-poppop.svg
-[travis]:          https://travis-ci.org/ctxhou/react-poppop.svg?branch=master
-[david]:           https://david-dm.org/ctxhou/react-poppop.svg
-[download]:        https://img.shields.io/npm/dm/react-poppop.svg
-[Maintainability]: https://api.codeclimate.com/v1/badges/b1738dd58819561b4e25/maintainability
-[codecov]:         https://codecov.io/gh/ctxhou/react-poppop/branch/master/graph/badge.svg
 
 ![img](https://i.imgur.com/8HMXcOi.png)
 
