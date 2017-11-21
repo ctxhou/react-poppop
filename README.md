@@ -4,11 +4,11 @@
 
 Compatible with React 15 and 16.
 
-![version][version]
-![travis][travis]
+![version][https://www.npmjs.com/package/react-poppop/]
+![travis][https://travis-ci.org/ctxhou/react-poppop]
 ![david][david]
-![codecov][codecov]
-![Maintainability][Maintainability]
+![codecov][https://codecov.io/gh/ctxhou/react-poppop]
+![Maintainability][https://codeclimate.com/github/ctxhou/react-poppop]
 ![download][download]
 
 ### [Demo](https://ctxhou.github.io/react-poppop/)

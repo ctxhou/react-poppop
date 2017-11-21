@@ -1,7 +1,7 @@
 {
   "name": "react-poppop",
   "version": "1.0.1",
-  "description": "react poppop is a react pop up",
+  "description": "A responsive, mobile support, multi directions and easy to use modal for ReactJS.",
   "main": "lib/index.js",
   "scripts": {
     "start": "node devServer.js",
@@ -33,6 +33,7 @@
     "modal",
     "popup",
     "dialog",
+    "pop",
     "react-poppop",
     "react-component"
   ],
