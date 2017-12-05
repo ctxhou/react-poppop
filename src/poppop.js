@@ -45,7 +45,7 @@ export default class PopPop extends Component {
   }
 
   handleOverlayClick = () => {
-    if (this.props.closeOnOverlay) {
+    if (this.props.onClose && this.props.closeOnOverlay) {
       this.props.onClose();
     }
   }
@@ -57,7 +57,7 @@ export default class PopPop extends Component {
   }
 
   handleEscKeyDown = (e) => {
-    if (this.props.closeOnEsc && e.keyCode === 27) {
+    if (this.props.onClose && this.props.closeOnEsc && e.keyCode === 27) {
       this.props.onClose();
     }
   }
