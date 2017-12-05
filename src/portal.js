@@ -23,6 +23,10 @@ export default class Portal extends Component {
     this.renderUnstableSubtree();
   }
 
+  componentDidUpdate() {
+    this.renderUnstableSubtree();
+  }
+
   componentWillReceiveProps(nextProps) {
     if (!nextProps.open) {
       this.resetBodyOverflow();
