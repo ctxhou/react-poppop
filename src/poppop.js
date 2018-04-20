@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Tappable from 'react-tappable/lib/Tappable';
 import {Transition} from 'react-transition-group';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import Portal from './portal';
 import {extractCamelCase} from './utils';
 import styles from './style';
+injectTapEventPlugin();
 
 export default class PopPop extends Component {
   constructor(props) {
@@ -91,8 +92,9 @@ export default class PopPop extends Component {
                   ...mergeWrapperStyle,
                   ...styles.transitionStyles[state]
                  }}>
-              <Tappable onTap={this.handleOverlayClick}
-                        style={mergeOverlayStyle}/>
+              <div onClick={this.handleOverlayClick}
+                   onTouchTap={this.handleOverlayClick}
+                   style={mergeOverlayStyle}/>
               <div style={mergeContentStyle}>
                 {this._renderCloseBtn()}
                 {this.props.children}

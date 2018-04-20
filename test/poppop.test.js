@@ -41,12 +41,12 @@ describe('props', () => {
 
   it('overlay style', () => {
     const component = mount(shareComponent({overlayStyle: {background: 'red'}}));
-    expect(component.find('Tappable').get(0).props.style).toMatchObject({background: 'red'});
+    expect(component.find('div').get(1).props.style).toMatchObject({background: 'red'});
   })
 
   it('content style', () => {
     const component = mount(shareComponent({contentStyle: {background: 'red'}}));
-    expect(component.find('div').get(1).props.style).toMatchObject({background: 'red'});
+    expect(component.find('div').get(2).props.style).toMatchObject({background: 'red'});
   })
 
   it('has close button & trigger onClose', () => {

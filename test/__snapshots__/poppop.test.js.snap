@@ -44,14 +44,9 @@ exports[`render no props 1`] = `
           }
         }
       >
-        <Tappable
-          activeDelay={0}
-          classBase="Tappable"
-          component="span"
-          moveThreshold={100}
-          onTap={[Function]}
-          pressDelay={1000}
-          pressMoveThreshold={5}
+        <div
+          onClick={[Function]}
+          onTouchTap={[Function]}
           style={
             Object {
               "backgroundColor": "rgba(0,0,0,0.6)",
@@ -63,39 +58,7 @@ exports[`render no props 1`] = `
               "zIndex": 99,
             }
           }
-        >
-          <span
-            className="Tappable-inactive"
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            onMouseOut={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            style={
-              Object {
-                "KhtmlUserSelect": "none",
-                "MozUserSelect": "none",
-                "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                "WebkitTouchCallout": "none",
-                "WebkitUserSelect": "none",
-                "backgroundColor": "rgba(0,0,0,0.6)",
-                "cursor": "pointer",
-                "height": "100%",
-                "left": 0,
-                "msUserSelect": "none",
-                "position": "fixed",
-                "top": 0,
-                "userSelect": "none",
-                "width": "100%",
-                "zIndex": 99,
-              }
-            }
-          />
-        </Tappable>
+        />
         <div
           style={
             Object {
