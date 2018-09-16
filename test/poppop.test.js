@@ -1,7 +1,6 @@
 import React from 'react';
 import PopPop from '../src';
 import {shallow, render, mount} from 'enzyme';
-import toJson from 'enzyme-to-json';
 import {extractCamelCase} from '../src/utils';
 import {alignItems, justifyContent} from '../src/style';
 
@@ -14,7 +13,7 @@ const shareComponent = props => (
 describe('render', () => {
   it('no props', () => {
     const component = mount(shareComponent());
-    expect(toJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('close', () => {
