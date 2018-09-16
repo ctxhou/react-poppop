@@ -91,7 +91,6 @@ export default class PopPop extends Component {
                   ...styles.transitionStyles[state]
                  }}>
               <div onClick={this.handleOverlayClick}
-                   onTouchTap={this.handleOverlayClick}
                    style={mergeOverlayStyle}/>
               <div style={mergeContentStyle}>
                 {this._renderCloseBtn()}
