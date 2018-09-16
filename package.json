@@ -1,6 +1,6 @@
 {
   "name": "react-poppop",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A responsive, mobile support, multi directions and easy to use modal for ReactJS.",
   "main": "lib/index.js",
   "scripts": {
