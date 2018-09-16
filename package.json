@@ -107,8 +107,8 @@
   },
   "jest": {
     "setupFiles": [
-      "./test/shim",
-      "./test/enzyme-setup"
+      "<rootDir>/test/shim",
+      "<rootDir>/test/enzyme-setup"
     ],
     "roots": [
       "<rootDir>/test/"
